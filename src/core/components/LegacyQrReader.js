@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import QrReader from 'react-qr-reader'
 
+import { Button } from '/core/forms/fields';
+
+
 class LegacyQrReader extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +21,7 @@ class LegacyQrReader extends Component {
     this.refs.qrReader1.openImageDialog();
   }
   render() {
-
+    const { disabled } = this.props;
     return(
       <Fragment>
         <QrReader
@@ -29,7 +32,9 @@ class LegacyQrReader extends Component {
           onScan={this.handleScan}
           legacyMode
         />
-        <input type="button" value="Scan QR Code" onClick={this.openImageDialog} />
+        <Button onClick={this.openImageDialog} disabled={disabled}>
+          {disabled ? 'Loading...' : 'Scan QR Code'}
+        </Button>
       </Fragment>
     )
   }

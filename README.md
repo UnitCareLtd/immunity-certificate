@@ -57,3 +57,4 @@ Open the file `dist/index.html` in your browser
 ## Credits
 - Project boilerplate by [createapp.dev](https://createapp.dev/)
 - Check-mark animated SVG adapted from [Alexander Haniotis](https://codepen.io/haniotis)
+# immunity-certificate

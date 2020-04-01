@@ -1,28 +1,26 @@
 
-import React from "react";
-import { useEffect, Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from "react";
 
+import { enableInfura } from '/blockchain';
 import CheckImmunityForm from './form';
-import Certificate from './certificate';
-import {enableInfura} from '../../blockchain';
+import CertificateResult from './result';
+
 
 const CheckImmunityView = () => {
+  const resultRef = useRef(null);
   const [certificate, setCertificate] = useState({});
   const [isCertificateFetched, setIsCertificateFetched] = useState(false);
-  useEffect(() => {
-    enableInfura();
-  }, []);
+  useEffect(() => { enableInfura(); }, []);
   return (
     <Fragment>
       <div className="row">
         <div className="column">
           <h2>Check Immunity</h2>
-          <CheckImmunityForm setCertificate={setCertificate} setIsCertificateFetched={setIsCertificateFetched} />
+          <CheckImmunityForm setCertificate={setCertificate} setIsCertificateFetched={setIsCertificateFetched} resultRef={resultRef} />
         </div>
       </div>
-      { isCertificateFetched && <Certificate certificate={certificate} /> }
+      {isCertificateFetched && <CertificateResult certificate={certificate} resultRef={resultRef} /> }
     </Fragment>
-
   );
 };
 
