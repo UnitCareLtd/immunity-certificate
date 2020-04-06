@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/nordicenergy/immunity-certificate) 
+
 # Immunity Certificate App
 
 ## Preparation of Authority and Tester accounts using MetaMask
@@ -57,3 +59,4 @@ Open the file `dist/index.html` in your browser
 ## Credits
 - Project boilerplate by [createapp.dev](https://createapp.dev/)
 - Check-mark animated SVG adapted from [Alexander Haniotis](https://codepen.io/haniotis)
+# immunity-certificate
